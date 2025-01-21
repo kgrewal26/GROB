@@ -32,6 +32,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Path.msg"
   "msg/States.msg"
   "srv/SavedPath.srv"
+  "srv/ClearPath.srv"
   DEPENDENCIES builtin_interfaces
 )
 

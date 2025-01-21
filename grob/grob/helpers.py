@@ -4,6 +4,9 @@ M_PI=3.1415926535
 
 import numpy as np
 
+from grob_interfaces.msg import States
+from grob.definitions import States_E
+
 class Logger:
     def __init__(self, filename, headers=["e", "e_dot", "e_int", "stamp"]):
         self.filename = filename
@@ -125,3 +128,11 @@ def calculate_angular_error(current_pose, goal_pose):
         error_angular = goal_pose.theta - current_pose.theta
     
     return error_angular
+
+# Helper to request a new state
+def request_new_state(request_state_publisher, new_state: States_E):
+
+    newStateMsg = States()
+    newStateMsg.state = int(new_state)
+
+    request_state_publisher.publish(newStateMsg)
