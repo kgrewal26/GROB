@@ -101,7 +101,7 @@ class controller(Node):
             
             # Check if we're close enough to linear goal (x,y)
             if (abs(e_linear) < LINEAR_ERROR_TOLERANCE):
-                
+
                 # Request out of navigation - start waiting for next steps (scoop, replan, etc.)
                 print("Finished Path - Requesting to WAIT state")
                 request_new_state(self.request_state_publisher, States_E.WAITING)
