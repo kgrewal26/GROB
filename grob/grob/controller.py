@@ -99,8 +99,9 @@ class controller(Node):
             e_linear = calculate_linear_error(current_pose, final_pose)
             e_angular = calculate_angular_error(current_pose, goal_pose)
             
-            # Check if we're close enough to goal
+            # Check if we're close enough to linear goal (x,y)
             if (abs(e_linear) < LINEAR_ERROR_TOLERANCE):
+                
                 # Request out of navigation - start waiting for next steps (scoop, replan, etc.)
                 print("Finished Path - Requesting to WAIT state")
                 request_new_state(self.request_state_publisher, States_E.WAITING)
