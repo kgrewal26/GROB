@@ -103,7 +103,7 @@ class controller(Node):
             if (abs(e_linear) < LINEAR_ERROR_TOLERANCE):
 
                 # Request out of navigation - start waiting for next steps (scoop, replan, etc.)
-                print("Finished Path - Requesting to WAIT state")
+                print("Finished Path - Requesting to WAITING state")
                 request_new_state(self.request_state_publisher, States_E.WAITING)
 
             vel_linear = self.linear_PID.update([e_linear, states_msg.stamp], True)

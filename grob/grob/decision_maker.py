@@ -18,8 +18,8 @@ class decision_maker(Node):
         self.state_time = self.create_timer(1, self.publishCurrentState)
 
         # Track current state (scanning is default)
-        self.state = States_E.SCANNING
-        self.requested_state = States_E.SCANNING
+        self.state = States_E.PLANNING
+        self.requested_state = States_E.PLANNING
 
         # For checking if controller is ready to path follow
         self.path_ready_client = self.create_client(SavedPath, 'check_if_saved_path')
